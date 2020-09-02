@@ -16,16 +16,24 @@ With this implementation we intend to provide APIs to:
 
 [!Architecture](./assets/architecture.png)
 
-Here we propose a domain driven architecture. We created four Restful microsservices and two backend scripts.
+Here we propose a domain driven architecture with microservices. In  non-functional requirement
 
 ### Movies
 
-The [movies](./movies) microsservice take account of the movie domain. Their APIs answer questions about movie details, genders of movies and searchs for movies.
+The [movies](./movies) microservice take account of the movie domain. Their APIs answer questions about movie details, genders of movies and searchs for movies.
 
 ### Ranking
 
-The [ranking](./ranking) microsservice take account of the votes and movies ranking. Their APIs collect users likes and compute the ranking. Here we also provide a ranking by gender and the top 10 overall movies.
+The [ranking](./ranking) microservice take account of the votes and movies ranking. Their APIs collect users likes and compute the ranking. Here we also provide a ranking by gender and the top 10 overall movies.
 
 ### Reminder
 
-The [reminder](.reminder) microsservice collect the reminder and watch later movies list. Their APIs collect users desire for reminder a movie and to set movies as watched.
+The [reminder](./reminder) microservice collect the reminder and watch later movies list. Their APIs collect users desire for reminder a movie and to set movies as watched.
+
+### Support
+
+The [support](./support) microservice posts the user message to a Kafka topic in order to notify the _technical support_ team.
+
+### Technical Support
+
+The [technical support](./technical-support) reads from the _support-topic_ and logs a message simulating a service order creation.

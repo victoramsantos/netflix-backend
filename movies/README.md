@@ -1,6 +1,6 @@
 # Movies
 
-The **movies** microsservice take account of the movie domain. Their APIs answer questions about movie details, genders of movies and searchs for movies.
+The **movies** microservice take account of the movie domain. Their APIs answer questions about movie details, genders of movies and searchs for movies.
 
 ## APIs
 - GET /movies

@@ -1,6 +1,6 @@
 # Reminder
 
-The **reminder** microsservice collect the reminder and watch later movies list. Their APIs collect users desire for reminder a movie and to set movies as watched.
+The **reminder** microservice collect the reminder and watch later movies list. Their APIs collect users desire for reminder a movie and to set movies as watched.
 
 ## APIs
 
