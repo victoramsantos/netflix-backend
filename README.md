@@ -14,7 +14,7 @@ With this implementation we intend to provide APIs to:
 
 ## Architecture
 
-[!Architecture](./assets/architecture.png)
+![Architecture](./assets/architecture.png)
 
 Here we propose a domain driven architecture. We created four Restful microsservices and two backend scripts.
 
