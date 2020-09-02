@@ -1,11 +1,11 @@
 version: "3"
 services:
- mongo-room:
+ mongo-movies:
   image: mongo:4.2.5
-  container_name: mongo-room
+  container_name: mongo-movies
   ports:
-  - "27017:27017"
+   - "27017:27017"
   environment:
-    MONGO_INITDB_DATABASE: room
+    MONGO_INITDB_DATABASE: movies
   volumes:
    - ./resources/mongodb:/docker-entrypoint-initdb.d

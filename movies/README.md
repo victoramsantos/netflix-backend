@@ -117,7 +117,7 @@ Add a movie
 		"name": "string",
 		"gender": ["string"],
 		"director": "string",
-		"description": "string",
+		"description": "string"
 	}
 ]
 ```

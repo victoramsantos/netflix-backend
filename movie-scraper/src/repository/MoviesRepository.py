@@ -1,3 +1,4 @@
+import json
 import os
 
 import requests
@@ -11,5 +12,6 @@ class MoviesRepository:
 
     def add_movie(self, movie: dict):
         requests.post(
-            url=f"{self.__movies_url}/movies"
+            url=f"{self.__movies_url}/movies",
+            json=json.dumps(movie)
         )
