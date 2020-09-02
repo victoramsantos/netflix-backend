@@ -1,0 +1,11 @@
+version: "3"
+services:
+ mongo-room:
+  image: mongo:4.2.5
+  container_name: mongo-room
+  ports:
+  - "27017:27017"
+  environment:
+    MONGO_INITDB_DATABASE: room
+  volumes:
+   - ./resources/mongodb:/docker-entrypoint-initdb.d

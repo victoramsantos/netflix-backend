@@ -17,7 +17,7 @@ List all available movies
 	{
 		"movieId": "string",
 		"name": "string",
-		"gender": "string"
+		"gender": ["string"]
 	}
 ]
 ```
@@ -35,7 +35,7 @@ Visualize movie details by {movie_id}
 {
 	"movieId": "string",
 	"name": "string",
-	"gender": "string",
+	"gender": ["string"],
 	"director": "string",
 	"description": "string",
 	"votes": "integer"
@@ -63,7 +63,7 @@ List movies by gender
 	{
 		"movieId": "string",
 		"name": "string",
-		"gender": "string"
+		"gender": ["string"]
 	}
 ]
 ```
@@ -82,10 +82,31 @@ Search movies by keyword
 	{
 		"movieId": "string",
 		"name": "string",
-		"gender": "string"
+		"gender": ["string"]
 	}
 ]
 ```
+
+- POST /movies
+
+Add a movie
+
+**Request**
+
+
+```json
+{
+	"movieId": "string",
+	"name": "string",
+	"gender": ["string"],
+	"director": "string",
+	"description": "string",
+}
+```
+
+**Response**
+
+204
 
 ## Database
 
@@ -94,7 +115,7 @@ Search movies by keyword
 	{
 		"movieId": "string",
 		"name": "string",
-		"gender": "string",
+		"gender": ["string"],
 		"director": "string",
 		"description": "string",
 	}
