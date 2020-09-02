@@ -21,7 +21,7 @@ With this implementation we intend to provide APIs to:
 
 ## Dataset
 
-In order to simulate a real scenario, we pick up from [Kaggle](https://www.kaggle.com/) an [IMDB dataset](kaggle.com/PromptCloudHQ/imdb-data) with 1,000 of the most popular movies on IMDB in the last 10 years. In this dataset are structured a lot of information about movies, however, to simplify our implementation we took only some of them.
+In order to simulate a real scenario, we pick up from [Kaggle](https://www.kaggle.com/) an [IMDB dataset](https://www.kaggle.com/PromptCloudHQ/imdb-data) with 1,000 of the most popular movies on IMDB in the last 10 years. In this dataset are structured a lot of information about movies, however, to simplify our implementation we took only some of them.
 
 We also designed a script to filter this dataset and build a populated database schema for our microservices.
 
