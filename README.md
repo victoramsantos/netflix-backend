@@ -14,7 +14,7 @@ With this implementation we intend to provide APIs to:
 
 ## Architecture
 
-[!Architecture](./assets/architecture.png)
+![Architecture](./assets/architecture.png)
 
 Here we propose a domain driven architecture with microservices. In  non-functional requirement
 
