@@ -25,16 +25,14 @@ Retrieve votes of a movie
 200 - 
 ```json
 {
-	"movieId": "string",
+	"movieId": "integer",
 	"votes": "integer"
 }
 ```
 
 404 - 
 ```json
-{
-	"message": "string",
-}
+{}
 ```
 
 - GET /ranking/gender/{gender}
@@ -49,25 +47,18 @@ List ranked movies by gender
 ```json
 [
 	{
-		"movieId": "string",
+		"movieId": "integer",
+		"name": "string",
 		"votes": "integer"
 	}
 ]
 ```
 
-- GET /ranking/top10
-
-List top 10 overall movies
-
-**Request**
-
-**Response**
-
-200 - 
+## Database
 ```json
 [
 	{
-		"movieId": "string",
+		"movieId": "integer",
 		"votes": "integer"
 	}
 ]

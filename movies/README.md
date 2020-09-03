@@ -15,7 +15,7 @@ List all available movies
 ```json
 [
 	{
-		"movieId": "string",
+		"movieId": "integer",
 		"name": "string",
 		"gender": ["string"]
 	}
@@ -33,7 +33,7 @@ Visualize movie details by {movie_id}
 200 - 
 ```json
 {
-	"movieId": "string",
+	"movieId": "integer",
 	"name": "string",
 	"gender": ["string"],
 	"director": "string",
@@ -61,7 +61,7 @@ List movies by gender
 ```json
 [
 	{
-		"movieId": "string",
+		"movieId": "integer",
 		"name": "string",
 		"gender": ["string"]
 	}
@@ -80,7 +80,7 @@ Search movies by keyword
 ```json
 [
 	{
-		"movieId": "string",
+		"movieId": "integer",
 		"name": "string",
 		"gender": ["string"]
 	}
@@ -96,7 +96,7 @@ Add a movie
 
 ```json
 {
-	"movieId": "string",
+	"movieId": "integer",
 	"name": "string",
 	"gender": ["string"],
 	"director": "string",
@@ -113,7 +113,7 @@ Add a movie
 ```json
 [
 	{
-		"movieId": "string",
+		"movieId": "integer",
 		"name": "string",
 		"gender": ["string"],
 		"director": "string",

@@ -1,4 +1,4 @@
-FROM python:3.8.2
+FROM python:3.7-alpine
 
 WORKDIR /app
 COPY src/ /app/src/
@@ -6,8 +6,7 @@ COPY requirements /app
 COPY application.ini /app
 COPY main.py /app
 
-RUN pip --version
-#RUN python3 -m pip install -r requirements
+RUN python3 -m pip install -r requirements
 
 ENV ENVIRONMENT DEV
 CMD ["python", "/app/main.py"]

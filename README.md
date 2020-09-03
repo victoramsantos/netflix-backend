@@ -38,7 +38,7 @@ The [movies](./movies) microservice take account of the movie domain. Their APIs
 
 ### Ranking
 
-The [ranking](./ranking) microservice take account of the votes and movies ranking. Their APIs collect users likes and compute the ranking. Here we also provide a ranking by gender and the top 10 overall movies.
+The [ranking](./ranking) microservice take account of the votes and movies ranking. Their APIs collect users likes and compute the ranking. 
 
 ### Reminder
 

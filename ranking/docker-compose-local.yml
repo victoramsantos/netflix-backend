@@ -1,0 +1,11 @@
+version: "3"
+services:
+ mongo-ranking:
+  image: mongo:4.2.5
+  container_name: mongo-ranking
+  ports:
+   - "27018:27017"
+  environment:
+    MONGO_INITDB_DATABASE: ranking
+  volumes:
+   - ./resources/mongodb:/docker-entrypoint-initdb.d
