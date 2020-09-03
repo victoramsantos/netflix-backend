@@ -45,7 +45,7 @@ Visualize movie details by {movie_id}
 404 - 
 ```json
 {
-	"message": "string",
+	"message": "string"
 }
 ```
 
@@ -68,7 +68,7 @@ List movies by gender
 ]
 ```
 
-- GET /movies/?={query}
+- GET /movies/?q={query}
 
 Search movies by keyword
 
@@ -100,7 +100,7 @@ Add a movie
 	"name": "string",
 	"gender": ["string"],
 	"director": "string",
-	"description": "string",
+	"description": "string"
 }
 ```
 

@@ -20,6 +20,12 @@ class Mongo:
             elem.pop("_id")
             yield elem
 
+    def find_all_by(self, collection: str, query: dict):
+        db_collection = self.__database[collection]
+        for elem in db_collection.find(query):
+            elem.pop("_id")
+            yield elem
+
     def find_by(self, collection: str, query: dict):
         db_collection = self.__database[collection]
         for elem in db_collection.find(query):

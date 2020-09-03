@@ -8,3 +8,4 @@ db.movies.insertMany([
 		"description": "Neo starts saving the world, the real one"
 	}
 ]);
+db.movies.createIndex( { name: "text" } )
