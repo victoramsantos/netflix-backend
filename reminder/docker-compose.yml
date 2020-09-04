@@ -1,0 +1,19 @@
+version: "3"
+services:
+ mongo-reminder:
+  image: mongo:4.2.5
+  container_name: mongo-reminder
+  environment:
+    MONGO_INITDB_DATABASE: reminder
+  volumes:
+   - ./resources/mongodb:/docker-entrypoint-initdb.d
+
+ reminder:
+  build: .
+  container_name: reminder
+  ports:
+    - "8083:8080"
+  environment:
+    MONGO_HOST: mongo-reminder
+  depends_on:
+    - mongo-reminder

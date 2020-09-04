@@ -27,7 +27,7 @@ Provide a reminder list of movies
 ```json
 [
 	{
-		"movieId": "string"
+		"movieId": "integer"
 	}
 ]
 ```
@@ -54,7 +54,33 @@ List watched movies for an user
 ```json
 [
 	{
-		"movieId": "string"
+		"movieId": "integer"
+	}
+]
+```
+
+## Database
+
+### Reminder
+```json
+[
+	{
+		"userId": "integer",
+        "movies": [
+            "integer"        
+        ]
+	}
+]
+```
+
+### Watched
+```json
+[
+	{
+		"userId": "integer",
+        "movies": [
+            "integer"        
+        ]
 	}
 ]
 ```

@@ -2,7 +2,7 @@ version: "3"
 services:
  mongo-ranking:
   image: mongo:4.2.5
-  container_name: mongo-movies
+  container_name: mongo-ranking
   environment:
     MONGO_INITDB_DATABASE: ranking
   volumes:
