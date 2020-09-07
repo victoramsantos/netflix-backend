@@ -4,7 +4,7 @@
 
 Here we implemented a sample of Netflix's backend. We had designed a Domain Driven Architecture using microservices and Kafka. In order to simulate a real scenario, we pick up a real dataset with 1,000 of the most popular movies on IMDB in the last 10 years.
 
-**Keyword**: microservice, python, kafka, flask, restful-api
+**Keywords**: microservice, python, kafka, flask, restful-api
 
 ## Motivation
 
@@ -35,6 +35,7 @@ We also designed a script to filter this dataset and build a populated database 
 
 Here we propose a domain driven architecture with microservices. In order to solve a non-functional requirement we implemented a [Kafka](https://kafka.apache.org/) communication between some services.
 
+All microservices are coded with Python 3.7+, [Flask web framework](https://flask.palletsprojects.com/en/1.1.x/) and [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) priciples.
 
 ### Movies
 
@@ -58,7 +59,7 @@ The [technical support](./technical-support) reads from the _support-topic_ and 
 
 ### Movie Scraper
 
-The **movie scraper** process our dataset and build a populated database schema with all movies.
+The [movie-scraper](./movie-scraper) process our dataset and build a populated database schema with all movies.
 
 Here we use the [pandas](https://pandas.pydata.org/) library. This library reads our [dataset CSV file](./movie-scraper/resources/dataset/IMDB-Movie-Data.csv) and, given the _MAX_MOVIES_ variable, we add the movies to **movies** service.
 
