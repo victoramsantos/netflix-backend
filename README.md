@@ -23,6 +23,8 @@ With this implementation we intend to provide APIs to:
 
 In order to simulate a real scenario, we pick up from [Kaggle](https://www.kaggle.com/) an [IMDB dataset](https://www.kaggle.com/PromptCloudHQ/imdb-data) with 1,000 of the most popular movies on IMDB in the last 10 years. In this dataset are structured a lot of information about movies, however, to simplify our implementation we took only some of them.
 
+![IMDB Dataset](./assets/IMDB-dataset.png)
+
 We also designed a script to filter this dataset and build a populated database schema for our microservices.
 
 ## Architecture
@@ -34,7 +36,7 @@ Here we propose a domain driven architecture with microservices. In order to sol
 
 ### Movies
 
-The [movies](./movies) microservice take account of the movie domain. Their APIs answer questions about movie details, genders of movies and searchs for movies.
+The [movies](./movies) microservice take account of the movie domain. Their APIs answer questions about movie details, genders of movies and searchs for movies. Its database is built by the [movie scraper](./movie-scraper) which reads our IMDB dataset and populates the movies' database.
 
 ### Ranking
 
@@ -54,4 +56,18 @@ The [technical support](./technical-support) reads from the _support-topic_ and 
 
 ### Movie Scraper
 
-The [movie scraper](./movie-scraper) reads our dataset and build a populated database schema with all movies.
+The [movie scraper](./movie-scraper) reads our IMDB Dataset and uses the [movies](./movies) APIs to add movies to its database.
+
+## Running 
+
+We provide a [bootstrap.sh](./bootstrap.sh) script to simplify the stack boot. This script runs our [docker-compose.yml](./docker-compose.yml) which starts all services, databases and Kafka. After that, the scripts sleeps for 30 seconds waiting for all container be up. So it runs the [docker-compose-scraper.yml](docker-compose-scraper.yml) which starts to populate our **movies** database. 
+
+![bootstrap script output](./assets/bootstrap.png)
+
+It's possible to customize the amount of movies changing the _MAX_MOVIES_ variable at [docker-compose-scraper.yml](docker-compose-scraper.yml). However we have, because of our dataset, we are limited to a max of 1,000 movies. Here we setup as default 10 movies. 
+
+## Testing
+
+As a simple way to test our stack, we provides a [postman collection](netflix-backend.postman_collection.json). This collection has sample requests for all proposed APIs.
+
+![Postman collection](./assets/postman.png)

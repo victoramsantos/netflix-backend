@@ -1,6 +1,6 @@
 # Movies
 
-The **movies** microservice take account of the movie domain. Their APIs answer questions about movie details, genders of movies and searchs for movies.
+The **movies** microservice take account of the movie domain. Their APIs answer questions about movie details, genders of movies and searchs for movies. Its database is built by the [movie scraper](./movie-scraper) which reads our IMDB dataset and populate the movies' database.
 
 ## APIs
 - GET /movies

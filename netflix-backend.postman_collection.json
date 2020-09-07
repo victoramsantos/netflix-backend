@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "8e1ab5d0-80b0-4c6d-b428-8804c494a944",
+		"name": "netflix-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "movies",
+			"item": [
+				{
+					"name": "/movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"movieId\": 1002,\n        \"name\": \"Matrix 2\",\n        \"gender\": [\n            \"Adventure\",\n            \"Sci-Fi\",\n            \"Comedy\"\n        ],\n        \"director\": \"Wachowski Brothers\",\n        \"description\": \"He still trying to save the world\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/{movide_id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/movies/1001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"movies",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/gender/{gender}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/movies/gender/Adventure",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"movies",
+								"gender",
+								"Adventure"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/?={query}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/movies/?q=Matrix",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"movies",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Matrix"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ranking",
+			"item": [
+				{
+					"name": "/votes/{movie_id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/votes/1001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"votes",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/votes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/votes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"votes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/votes/{movie_id}/like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/votes/1001/like",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"votes",
+								"1001",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ranking/gender/{gender}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/ranking/gender/Adventure",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"ranking",
+								"gender",
+								"Adventure"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "reminder",
+			"item": [
+				{
+					"name": "/reminder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/reminder",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"reminder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/reminder/{user_id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/reminder/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"reminder",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/reminder/{user_id}/{movie_id}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/reminder/1/1002",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"reminder",
+								"1",
+								"1002"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/watched",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/watched",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"watched"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/watched/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/watched/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"watched",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/watched/{user_id}/{movie_id}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/watched/1/1003",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"watched",
+								"1",
+								"1003"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "support",
+			"item": [
+				{
+					"name": "/support/{user_id}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Huston, I have a problem.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8084/support/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"support",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

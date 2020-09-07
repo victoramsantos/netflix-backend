@@ -4,4 +4,5 @@ services:
   build: ./movie-scraper
   container_name: movie-scraper
   environment:
-    ENVIRONMENT: DEV
+    MAX_MOVIES: 10
+  network_mode: host

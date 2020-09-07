@@ -1,8 +1,7 @@
-FROM python:3.7
+FROM python:3.7-alpine
 
 WORKDIR /app
 COPY src/ /app/src/
-COPY resources/ /app/resources/
 COPY requirements /app
 COPY application.ini /app
 COPY main.py /app

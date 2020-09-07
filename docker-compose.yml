@@ -3,17 +3,107 @@ services:
  mongo-movies:
   image: mongo:4.2.5
   container_name: mongo-movies
+  ports:
+   - "27017:27017"
   environment:
     MONGO_INITDB_DATABASE: movies
   volumes:
-   - ./resources/mongodb:/docker-entrypoint-initdb.d
+   - ./movies/resources/mongodb:/docker-entrypoint-initdb.d
 
  movies:
   build: ./movies
   container_name: movies
   ports:
-    - "8081:8080"
+    - "8081:8081"
   environment:
     MONGO_HOST: mongo-movies
+    MONGO_PORT: 27017
   depends_on:
     - mongo-movies
+
+ mongo-ranking:
+  image: mongo:4.2.5
+  container_name: mongo-ranking
+  environment:
+    MONGO_INITDB_DATABASE: ranking
+  ports:
+   - "27018:27017"
+  volumes:
+   - ./ranking/resources/mongodb:/docker-entrypoint-initdb.d
+
+ ranking:
+  build: ./ranking
+  container_name: ranking
+  ports:
+    - "8082:8082"
+  environment:
+    MONGO_HOST: mongo-ranking
+    MONGO_PORT: 27017
+  depends_on:
+    - mongo-ranking 
+
+ mongo-reminder:
+  image: mongo:4.2.5
+  container_name: mongo-reminder
+  ports:
+   - "27019:27017"
+  environment:
+    MONGO_INITDB_DATABASE: reminder
+  volumes:
+   - ./reminder/resources/mongodb:/docker-entrypoint-initdb.d
+
+ reminder:
+  build: ./reminder
+  container_name: reminder
+  ports:
+    - "8083:8083"
+  environment:
+    MONGO_HOST: mongo-reminder
+    MONGO_PORT: 27017
+  depends_on:
+    - mongo-reminder
+
+ zookeeper:
+  image: 'bitnami/zookeeper:latest'
+  container_name: zookeeper
+  ports:
+    - "2181:2181"
+  environment:
+    - ALLOW_ANONYMOUS_LOGIN=yes
+
+ kafka:
+   image: 'bitnami/kafka:latest'
+   container_name: kafka
+   ports:
+     - '9092:9092'
+     - '9093:9093'
+   environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      - KAFKA_CFG_LISTENERS=CLIENT://:9092,EXTERNAL://:9093
+      - KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://kafka:9092,EXTERNAL://localhost:9093
+      - KAFKA_INTER_BROKER_LISTENER_NAME=CLIENT
+   depends_on:
+     - zookeeper
+
+ support:
+  build: ./support
+  container_name: support
+  environment:
+    KAFKA_SERVER: kafka:9092
+  ports:
+    - "8084:8084"
+  restart: always
+  depends_on:
+    - kafka
+
+ technical-support:
+  build: ./technical-support
+  container_name: technical-support
+  environment:
+    KAFKA_SERVER: kafka:9092
+  restart: always  
+  depends_on:
+    - kafka
+

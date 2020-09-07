@@ -66,9 +66,9 @@ List watched movies for an user
 [
 	{
 		"userId": "integer",
-        "movies": [
-            "integer"        
-        ]
+		"movies": [
+		    "integer"        
+		]
 	}
 ]
 ```
@@ -78,9 +78,9 @@ List watched movies for an user
 [
 	{
 		"userId": "integer",
-        "movies": [
-            "integer"        
-        ]
+		"movies": [
+		    "integer"        
+		]
 	}
 ]
 ```
