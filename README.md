@@ -1,6 +1,6 @@
 # A Netflix Backend Implementation
 
-![banner](./banner)
+![banner](./assets/banner.png)
 
 Here we implemented a sample of Netflix's backend. We had designed a Domain Driven Architecture using microservices and Kafka. In order to simulate a real scenario, we pick up a real dataset with 1,000 of the most popular movies on IMDB in the last 10 years.
 
