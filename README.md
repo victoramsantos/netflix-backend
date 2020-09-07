@@ -56,7 +56,9 @@ The [technical support](./technical-support) reads from the _support-topic_ and 
 
 ### Movie Scraper
 
-The [movie scraper](./movie-scraper) reads our IMDB Dataset and uses the [movies](./movies) APIs to add movies to its database.
+The **movie scraper** process our dataset and build a populated database schema with all movies.
+
+Here we use the [pandas](https://pandas.pydata.org/) library. This library reads our [dataset CSV file](./movie-scraper/resources/dataset/IMDB-Movie-Data.csv) and, given the _MAX_MOVIES_, we add the movies to **movies** service.
 
 ## Running 
 
